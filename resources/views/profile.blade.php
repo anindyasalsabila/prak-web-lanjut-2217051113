@@ -87,7 +87,7 @@
                             </li>
                             <li class="list-group-item">
                                 <strong>Kelas:</strong>
-                                <span>{{ $kelas }}</span>
+                                <span>{{ $nama_kelas }}</span>
                             </li>
                         </ul>
                     </div>
