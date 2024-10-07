@@ -14,18 +14,52 @@
         .card {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            
         }
         .card-header {
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
-           
+            background-color: #007bff; /* Warna header card */
+            color: white;
         }
         .profile-picture {
             border-radius: 50%;
             width: 150px;
             height: 150px;
             object-fit: cover;
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .list-group-item strong {
+            width: 100px;
+        }body {
+            background-color: #f0f8ff;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .card-header {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: #D3D3D3D3ZZ;
+            color: white;
+        }
+        .profile-picture {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .list-group-item strong {
+            width: 100px;
         }
     </style>
 </head>
@@ -43,9 +77,18 @@
                         
                         <!-- Teks rata tengah -->
                         <ul class="list-group text-center">
-                            <li class="list-group-item"><strong>Anindya Salsabila</strong></li>
-                            <li class="list-group-item"><strong>B</strong></li>
-                            <li class="list-group-item"><strong>2217051113</strong></li>
+                            <li class="list-group-item">
+                                <strong>Nama:</strong>
+                                <span>{{ $nama }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>NPM:</strong>
+                                <span>{{ $npm }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Kelas:</strong>
+                                <span>{{ $kelas }}</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
