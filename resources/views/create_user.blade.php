@@ -3,7 +3,7 @@
 @section('content')
 <div class="form-container">
     <h2>Isi Data User</h2>
-    <form action="{{ route('user.store') }}" method="POST">
+    <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         @csrf
         <div class="form-group">
@@ -25,7 +25,11 @@
                 @endforeach
             </select>
         </div>
-        <input type="submit" value ="submit">
+        <div class="form-group">
+            <label for="foto">Foto:</label><br>
+            <input type="file" id="foto" name="foto"><br><br>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 </div>
 @endsection
