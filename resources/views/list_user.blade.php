@@ -15,13 +15,27 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($users as $user) 
+            @foreach ($users as $user)
             <tr>
-                <td>{{ $user->id }}</td> 
+                <td>{{ $user->id }}</td>
                 <td>{{ $user->nama }}</td>
                 <td>{{ $user->npm }}</td>
                 <td>{{ $user->nama_kelas }}</td>
-                <td><a href="{{ route('user.show', $user->id) }}" class = "btn btn-warning mb-3">Detail</a></td>
+                <td>
+                    <!-- View -->
+                    <a href="{{ route('user.show', $user['id']) }}" class="btn btn-primary btn-sm">View</a>
+
+                    <!-- Edit -->
+                    <a href="{{ route('user.edit', $user['id']) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                    <!-- Delete -->
+                    <form action="{{ route('user.destroy', $user['id']) }}" method="POST" style="display:inline-block;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm"
+                            onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>
