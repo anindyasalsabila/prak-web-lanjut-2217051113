@@ -34,32 +34,6 @@
         }
         .list-group-item strong {
             width: 100px;
-        }body {
-            background-color: #f0f8ff;
-        }
-        .card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .card-header {
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            background-color: #D3D3D3D3ZZ;
-            color: white;
-        }
-        .profile-picture {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-        .list-group-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .list-group-item strong {
-            width: 100px;
         }
     </style>
 </head>
@@ -68,26 +42,26 @@
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header text-black text-center">
+                    <div class="card-header text-white text-center">
                         <h3>Profile</h3>
                     </div>
                     <div class="card-body text-center">
                         <!-- Gambar profil -->
-                        <img src="https://img.wattpad.com/4c907674db67ecca4a4872c3a1b34189d02be019/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f41307458744761675a782d6235413d3d2d32372e313566373433336662316539363430303737363237343032353137392e6a7067?s=fit&w=720&h=720.jpg" class="profile-picture mb-4" alt="Profile Picture">
+                        <img src="{{ asset('upload/img/' . $user->foto) }}" alt="foto-profile" class="profile-picture">
                         
                         <!-- Teks rata tengah -->
                         <ul class="list-group text-center">
                             <li class="list-group-item">
-                                <strong>Nama:</strong>
-                                <span>{{ $nama }}</span>
+                                <strong>Nama:</strong> 
+                                <span>{{ $user->nama }}</span>
                             </li>
                             <li class="list-group-item">
                                 <strong>NPM:</strong>
-                                <span>{{ $npm }}</span>
+                                <span>{{ $user->npm }}</span>
                             </li>
                             <li class="list-group-item">
-                                <strong>Kelas:</strong>
-                                <span>{{ $nama_kelas }}</span>
+                                <strong>Kelas:</strong> 
+                                <span>{{ $user->nama_kelas ?? 'Kelas tidak ditemukan' }}</span>
                             </li>
                         </ul>
                     </div>
