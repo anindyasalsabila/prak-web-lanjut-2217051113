@@ -3,6 +3,7 @@
 @section('content')
 <div class="form-container">
     <h2>Isi Data User</h2>
+    <a href="{{ route('user.list') }}" class="btn btn-primary">List User</a>
     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         @csrf
