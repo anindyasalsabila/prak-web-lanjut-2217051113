@@ -11,6 +11,7 @@
                 <th>Nama</th>
                 <th>NPM</th>
                 <th>Kelas</th>
+                <th>Foto</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -21,6 +22,8 @@
                 <td>{{ $user->nama }}</td>
                 <td>{{ $user->npm }}</td>
                 <td>{{ $user->nama_kelas }}</td>
+                <td><img src="{{ Storage::url($user->foto) }}" class="card-img-top" alt="Foto User" width="50" height="100">
+                    </td>
                 <td>
                     <!-- View -->
                     <a href="{{ route('user.show', $user['id']) }}" class="btn btn-primary btn-sm">View</a>
